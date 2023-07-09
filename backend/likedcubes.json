@@ -14,5 +14,13 @@
     "popular": 1,
     "description": "Прекрасный кубик с кристальной текстурой, который добавит блеск в вашу коллекцию.",
     "imageUrl": "http://localhost:3000/images/cube1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Кубик 'Азурный'",
+    "new": false,
+    "popular": 12,
+    "description": "Освежающий азурный кубик, который придает ощущение летнего морского бриза.",
+    "imageUrl": "http://localhost:3000/images/cube3.jpg"
   }
 ]

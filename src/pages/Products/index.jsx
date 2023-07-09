@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { saveCubes } from "../../core/slice";
 
-import { Card } from "../../components";
+import { Card, Loading, Background,  } from "../../components";
 import { getCubes } from "../../core/api";
 import "./index.css"
 
@@ -16,7 +16,7 @@ function ProductsPage() {
   let [cubes, setCubes] = useState([]);
 
   // клик на карточку
-  function handleClick(event) {
+  function clickCard(event) {
     const card = event.target.closest(".Card");
     if (card) {
       const cardId = card.getAttribute('data-id')
@@ -24,7 +24,7 @@ function ProductsPage() {
     }
   }
 
-  useEffect(() => {
+  function updateCubes() {
     if (savedCubes.length === 0) {
       getCubes()
         .then(data => {
@@ -36,19 +36,30 @@ function ProductsPage() {
           console.error(error);
         });
     } else {
-      console.log(savedCubes)
       setCubes(savedCubes);
     }
+  }
+
+  useEffect(() => {
+    updateCubes();
   }, [])
 
   return (
-    <div className="ProductsPage" onClick={handleClick}>
-      <div className="grid">
-        {cubes.map((cube) =>
-          <Card {...cube} key={cube.id} />
-        )}
-      </div>
-    </div>
+    <>
+      {cubes.length !== 0 ? (
+        <div className="ProductsPage" onClick={clickCard}>
+          <div className="grid">
+            {cubes.map((cube) =>
+              <Card {...cube} key={cube.id} />
+            )}
+          </div>
+          <Background />
+        </div>
+      ) : (
+        <Loading />
+      )
+      }
+    </>
   )
 };
 

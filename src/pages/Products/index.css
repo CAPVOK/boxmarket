@@ -1,15 +1,7 @@
 .ProductsPage {
-  position: relative;
-  box-sizing: border-box;
   min-height: 100vh;
-  padding-top: 100px;
   padding: 10%;
-}
-
-.ProductsPage .grid1 {
-  display: none;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5%;
+  padding-top: max(90px, 10%);
 }
 
 .ProductsPage .grid {

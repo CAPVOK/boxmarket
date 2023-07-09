@@ -55,6 +55,7 @@ function ProductPage() {
         .then(data => {
           console.log(data);
           dispatch(saveLiked(data));
+          dispatch(changeReload(false));
           if (data.find(liked => liked.id === +id)) {
             setLiked(true);
           }
