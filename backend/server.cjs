@@ -14,10 +14,10 @@ app.use(cors({
   allowedHeaders: "*"
 }));
 
-
 const dataPathCubes = './cubes.json';
 const dataPathLikedCubes = './likedcubes.json';
 const imagesPath = path.join(__dirname, 'images');
+const dataPathUsers = './users.json';
 
 // Чтение данных из файла
 function readCubesData(filePath) {
@@ -77,6 +77,19 @@ app.get('/cubes/:id', (req, res) => {
   const id = parseInt(req.params.id); // ид кубика 
   const cube = cubes.find(cube => cube.id === id);
   res.json(cube);
+});
+
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  const users = readCubesData(dataPathUsers);
+  const user = users.find(user => user.username === username && user.password === password);
+
+  if (user) {
+    res.status(200).json({ message: 'Авторизация успешна' });
+  } else {
+    res.status(401).json({ message: 'Неверный логин или пароль' });
+  }
 });
 
 // добавление нового кубика

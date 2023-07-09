@@ -2,7 +2,7 @@ import axios from "axios";
 
 const URL = "http://localhost:3000";
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: URL,
   headers: {
     'Content-Type': 'application/json',
@@ -67,5 +67,14 @@ export async function like(id) {
   } catch (error) {
     console.error(error);
     return null;
+  }
+}
+
+export async function logIn(obj) {
+  try {
+    const response = await api.post('/login', obj);
+    return response;
+  } catch (error) {
+    return error.response;
   }
 }
