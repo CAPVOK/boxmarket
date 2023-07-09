@@ -1,18 +1,18 @@
 [
   {
-    "id": 1,
-    "name": "Кубик 'Кристалл'",
-    "new": false,
-    "popular": 1,
-    "description": "Прекрасный кубик с кристальной текстурой, который добавит блеск в вашу коллекцию.",
-    "imageUrl": "http://localhost:3000/images/cube1.jpg"
-  },
-  {
     "id": 4,
     "name": "Кубик 'Радуга'",
     "new": false,
     "popular": 11,
     "description": "Яркий кубик с оттенками радуги, который привнесет веселье и цвет в вашу коллекцию.",
     "imageUrl": "http://localhost:3000/images/cube4.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Кубик 'Кристалл'",
+    "new": false,
+    "popular": 1,
+    "description": "Прекрасный кубик с кристальной текстурой, который добавит блеск в вашу коллекцию.",
+    "imageUrl": "http://localhost:3000/images/cube1.jpg"
   }
 ]

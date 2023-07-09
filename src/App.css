@@ -13,6 +13,6 @@ a,p, h1, h2, h3, h4, h5, h6 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-div {
-  margin: 0;
+body {
+	scroll-behavior: smooth;
 }

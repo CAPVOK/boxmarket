@@ -2,9 +2,10 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { getCube, getLiked, like } from "../../core/api.js";
-
-import './index.css';
 import { saveLiked, changeReload, } from "../../core/slice.js";
+
+import { Loading } from "../../components";
+import './index.css';
 
 function ProductPage() {
   const { id } = useParams();
@@ -30,7 +31,7 @@ function ProductPage() {
     navigate(-1);
   }
 
-  useEffect(() => {
+  function updateCubes() {
     if (savedCubes.length) {
       const cube = savedCubes.find(cube => cube.id === +id);
       setCube(cube);
@@ -42,7 +43,9 @@ function ProductPage() {
         })
         .catch(err => console.log(err))
     }
-    // есть ли лайк
+  }
+
+  function updateLiked() {
     if (!needReload && likedCubes.length !== 0) {
       if (likedCubes.find(liked => liked.id === +id)) {
         setLiked(true);
@@ -58,6 +61,11 @@ function ProductPage() {
         })
         .catch(err => console.log(err))
     }
+  }
+
+  useEffect(() => {
+    updateCubes();
+    updateLiked();
   }, [])
 
   return (<>
@@ -83,9 +91,7 @@ function ProductPage() {
           </button>
         </div>
       ) : (
-        <div className="loading">
-          <p>Загрузка...</p>
-        </div>
+        <Loading />
       )
     }
   </>)

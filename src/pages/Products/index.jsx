@@ -44,26 +44,9 @@ function ProductsPage() {
   return (
     <div className="ProductsPage" onClick={handleClick}>
       <div className="grid">
-        <div className="col col-1">
-          {cubes.slice(0, 3).map((cube) =>
-            <Card {...cube} key={cube.id} />
-          )}
-        </div>
-        <div className="col col-2">
-          {cubes.slice(3, 6).map((cube) =>
-            <Card {...cube} key={cube.id} />
-          )}
-        </div>
-        <div className="col col-3">
-          {cubes.slice(6, 9).map((cube) =>
-            <Card {...cube} key={cube.id} />
-          )}
-        </div>
-        <div className="col col-4">
-          {cubes.slice(9, 12).map((cube) =>
-            <Card {...cube} key={cube.id} />
-          )}
-        </div>
+        {cubes.map((cube) =>
+          <Card {...cube} key={cube.id} />
+        )}
       </div>
     </div>
   )

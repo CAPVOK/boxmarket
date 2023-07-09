@@ -9,7 +9,7 @@ function Card(props) {
         <img src={props.imageUrl} alt={props.name} />
       </div>
       <h3>{props.name}</h3>
-      <div className="panel">
+      <div className="background">
       </div>
     </div>
   )

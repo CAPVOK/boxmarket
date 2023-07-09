@@ -1,7 +1,7 @@
 .Card {
   position: relative;
   max-width: 100%;
-  max-height: 400px;
+  /* max-height: 400px; */
   background-color: var(--light_gray);
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@
   color: var(--white);
 }
 
-.Card .panel {
+.Card .background {
   position: absolute;
   top: 0;
   left: 0;
@@ -58,7 +58,7 @@
   transition: 0.4s ease-in-out;
   z-index: 1;
 }
-.Card:hover .panel {
+.Card:hover .background {
   transform: translate(-0%, -0%);
   border-radius: 0;
 }

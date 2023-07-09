@@ -14,18 +14,18 @@
 }
 
 .ProductPage button {
-  border: none;
   height: 50px;
-  border-radius: 50px;
   aspect-ratio: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   font-size: 30px;
   background-color: var(--brown);
   color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: all 0.3s;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 .ProductPage button.active {
   background-color: var(--red);
