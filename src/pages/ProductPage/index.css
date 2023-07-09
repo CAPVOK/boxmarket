@@ -1,0 +1,99 @@
+.ProductPage {
+  padding-top: 100px;
+  box-sizing: border-box;
+  height: 100vh;
+  margin-inline: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductPage .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ProductPage button {
+  border: none;
+  height: 50px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  background-color: var(--brown);
+  color: var(--white);
+  transition: all 0.3s;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+.ProductPage button.active {
+  background-color: var(--red);
+  color: var(--white);
+}
+.ProductPage button:hover {
+  scale: 1.1;
+}
+.ProductPage button:active {
+  scale: 1.2;
+}
+
+.ProductPage .header h1 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.ProductPage .body {
+  margin-top: 30px;
+  max-height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.ProductPage .body .image {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.ProductPage img {
+  border-radius: 30px;
+  width: auto;
+  height: auto;
+  max-height: 90%;
+  overflow: hidden;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+.ProductPage .body .blog {
+  width: 100%;
+}
+
+.ProductPage .body .blog p {
+  margin: 0 0 0 30px;
+  font-size: 2rem;
+}
+
+.ProductPage .back {
+  top: 25px;
+  left: 30px;
+  position: absolute;
+  z-index: 12;
+}
+
+.ProductPage .header button {
+  top: 25px;
+  right: 30px;
+  position: absolute;
+  z-index: 12;
+}
+
+.loading {
+  margin: 100px 30px 0 30px;
+}

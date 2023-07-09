@@ -1,0 +1,18 @@
+:root {
+	--light_gray: #edf0f0;
+	--dark: #203141;
+	--red: #f30f11;
+	--brown: #d58c5a;
+	--gray: #817f85;
+	--white: white;
+	
+	--container_width: max(80%, 760px);
+}
+
+a,p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+div {
+  margin: 0;
+}

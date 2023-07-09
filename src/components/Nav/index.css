@@ -1,0 +1,80 @@
+:root {
+  --width: max(calc(1vw * 6), 60px)
+}
+
+.Nav {
+  top: 10px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.Nav ul {
+  position: relative;
+  height: 50px;
+  width: calc(var(--width) * 3);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-inline: 10px;
+  background-color: var(--light_gray);
+  outline: var(--light_gray) solid 5px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.Nav ul li {
+  box-sizing: border-box;
+  width: var(--width);
+  text-align: center;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  z-index: 11;
+}
+
+.Nav ul li.active a {
+  color: var(--white);
+}
+
+.Nav .slider {
+  box-sizing: border-box;
+  position: absolute;
+  height: 50px;
+  width: var(--width);
+  transition: 0.3s;
+  z-index: 9;
+}
+
+.Nav .slider div {
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  background-color: var(--red);
+}
+
+.Nav .icon {
+  font-size: 25px;
+  text-decoration: none;
+  text-align: center;
+  color: var(--dark);
+  transition: 0.3s;
+}
+
+.Nav .icon:hover {
+  scale: 1.1;
+}
+
+.Nav ul li:nth-child(1).active~.slider {
+  transform: translateX(0);
+}
+
+.Nav ul li:nth-child(2).active~.slider {
+  transform: translateX(calc(var(--width) * 1));
+}
+
+.Nav ul li:nth-child(3).active~.slider {
+  transform: translateX(calc(var(--width) * 2));
+}

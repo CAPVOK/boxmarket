@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "Кубик 'Кристалл'",
+    "new": false,
+    "popular": 1,
+    "description": "Прекрасный кубик с кристальной текстурой, который добавит блеск в вашу коллекцию.",
+    "imageUrl": "http://localhost:3000/images/cube1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Кубик 'Мраморный'",
+    "new": true,
+    "popular": 13,
+    "description": "Стильный мраморный кубик с уникальными узорами, который станет великолепным акцентом в вашем интерьере.",
+    "imageUrl": "http://localhost:3000/images/cube2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Кубик 'Азурный'",
+    "new": false,
+    "popular": 12,
+    "description": "Освежающий азурный кубик, который придает ощущение летнего морского бриза.",
+    "imageUrl": "http://localhost:3000/images/cube3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Кубик 'Радуга'",
+    "new": false,
+    "popular": 11,
+    "description": "Яркий кубик с оттенками радуги, который привнесет веселье и цвет в вашу коллекцию.",
+    "imageUrl": "http://localhost:3000/images/cube4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Кубик 'Пастель'",
+    "new": true,
+    "popular": 10,
+    "description": "Нежный пастельный кубик, идеальный для создания романтической атмосферы.",
+    "imageUrl": "http://localhost:3000/images/cube5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Кубик 'Золотой'",
+    "new": false,
+    "popular": 8,
+    "description": "Элегантный золотой кубик, который придаст вашей коллекции роскоши и изысканности.",
+    "imageUrl": "http://localhost:3000/images/cube6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Кубик 'Хромированный'",
+    "new": false,
+    "popular": 9,
+    "description": "Блестящий хромированный кубик с зеркальной поверхностью, который отражает ваш стиль и изысканность.",
+    "imageUrl": "http://localhost:3000/images/cube7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Кубик 'Смоки'",
+    "new": true,
+    "popular": 7,
+    "description": "Таинственный кубик с дымчатой текстурой, который добавит загадочности в вашу коллекцию.",
+    "imageUrl": "http://localhost:3000/images/cube8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Кубик 'Перламутровый'",
+    "new": false,
+    "popular": 6,
+    "description": "Изысканный перламутровый кубик с эффектом переливающихся оттенков, который привлечет взгляды.",
+    "imageUrl": "http://localhost:3000/images/cube9.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Кубик 'Зеленый градиент'",
+    "new": false,
+    "popular": 5,
+    "description": "Зеленый кубик с плавным переходом от светлого к темному оттенку, который внесет гармонию в вашу коллекцию.",
+    "imageUrl": "http://localhost:3000/images/cube10.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Кубик 'Рубиновый'",
+    "new": false,
+    "popular": 4,
+    "description": "Благородный кубик рубинового цвета, который добавит изысканности и шика в ваш интерьер.",
+    "imageUrl": "http://localhost:3000/images/cube11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Кубик 'Черный матовый'",
+    "new": true,
+    "popular": 3,
+    "description": "Строгий и элегантный черный матовый кубик, который подчеркнет вашу утонченность и стиль.",
+    "imageUrl": "http://localhost:3000/images/cube12.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Кубик 'Солнечный'",
+    "new": false,
+    "popular": 2,
+    "description": "Яркий и солнечный кубик, напоминающий о теплых летних днях и радости.",
+    "imageUrl": "http://localhost:3000/images/cube13.jpg"
+  }
+]
