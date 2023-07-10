@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { getCube, getLiked, like } from "../../core/api.js";
+import { getCube, getLiked, like, api,  } from "../../core/api.js";
 import { saveLiked, changeReload, } from "../../core/slice.js";
 
 import { Loading } from "../../components";
@@ -45,6 +45,20 @@ function ProductPage() {
     }
   }
 
+  function getCubes() {
+    if (savedCubes && savedCubes.length) {
+      const cube = savedCubes.find(cube => cube.id === +id);
+      setCube(cube);
+    } else {
+      api.get(`/cubes/${id}`)
+        .then(cube => {
+          console.log(cube);
+          setCube(cube);
+        })
+        .catch(err => console.log(err))
+    }
+  }
+
   function updateLiked() {
     if (!needReload && likedCubes.length !== 0) {
       if (likedCubes.find(liked => liked.id === +id)) {
@@ -64,9 +78,28 @@ function ProductPage() {
     }
   }
 
+  function getLiked() {
+    if (!needReload && likedCubes && likedCubes.length) {
+      if (likedCubes.find(liked => liked.id === +id)) {
+        setLiked(true);
+      }
+    } else {
+      api.get('/liked')
+        .then(data => {
+          console.log(data);
+          dispatch(saveLiked(data));
+          dispatch(changeReload(false));
+          if (data.find(liked => liked.id === +id)) {
+            setLiked(true);
+          }
+        })
+        .catch(err => console.log(err))
+    }
+  }
+
   useEffect(() => {
-    updateCubes();
-    updateLiked();
+    getCubes();
+    getLiked();
   }, [])
 
   return (<>

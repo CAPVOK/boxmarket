@@ -1,10 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./index.css"
-
-import { getCubes, getLiked, } from "../../core/api";
-import { saveCubes, saveLiked } from "../../core/slice";
 
 function MainPage() {
 

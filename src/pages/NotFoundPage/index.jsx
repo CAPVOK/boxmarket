@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Background } from "../../components";
 import "./index.css"
 
 function NotFoundPage() {
@@ -7,6 +8,7 @@ function NotFoundPage() {
     <div className="NotFoundPage">
       <p>This page was not found</p>
       <p>Go to the <Link to="/">Main Page</Link></p>
+      <Background/>
     </div>
   )
 };
