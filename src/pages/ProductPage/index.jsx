@@ -37,9 +37,9 @@ function ProductPage() {
       setCube(cube);
     } else {
       api.get(`/cubes/${id}`)
-        .then(cube => {
-          console.log(cube);
-          setCube(cube);
+        .then(response => {
+          console.log(response.data);
+          setCube(response.data);
         })
         .catch(err => console.log(err))
     }
