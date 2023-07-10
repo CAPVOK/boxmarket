@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+
 import "./index.css";
 
 function Card(props) {
