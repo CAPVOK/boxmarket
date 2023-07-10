@@ -8,6 +8,22 @@
     "imageUrl": "http://localhost:3000/images/cube4.jpg"
   },
   {
+    "id": 3,
+    "name": "Кубик 'Азурный'",
+    "new": false,
+    "popular": 12,
+    "description": "Освежающий азурный кубик, который придает ощущение летнего морского бриза.",
+    "imageUrl": "http://localhost:3000/images/cube3.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Кубик 'Мраморный'",
+    "new": true,
+    "popular": 13,
+    "description": "Стильный мраморный кубик с уникальными узорами, который станет великолепным акцентом в вашем интерьере.",
+    "imageUrl": "http://localhost:3000/images/cube2.jpg"
+  },
+  {
     "id": 1,
     "name": "Кубик 'Кристалл'",
     "new": false,
@@ -16,11 +32,11 @@
     "imageUrl": "http://localhost:3000/images/cube1.jpg"
   },
   {
-    "id": 3,
-    "name": "Кубик 'Азурный'",
+    "id": 6,
+    "name": "Кубик 'Золотой'",
     "new": false,
-    "popular": 12,
-    "description": "Освежающий азурный кубик, который придает ощущение летнего морского бриза.",
-    "imageUrl": "http://localhost:3000/images/cube3.jpg"
+    "popular": 8,
+    "description": "Элегантный золотой кубик, который придаст вашей коллекции роскоши и изысканности.",
+    "imageUrl": "http://localhost:3000/images/cube6.jpg"
   }
 ]

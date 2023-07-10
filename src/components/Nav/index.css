@@ -40,7 +40,7 @@
 }
 
 .Nav .slider {
-  transform: translateX(-100%);
+  transform: translateX(-150%);
   box-sizing: border-box;
   position: absolute;
   height: 50px;
