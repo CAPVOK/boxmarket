@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { saveCubes } from "../../core/slice";
 
-import { Card, Loading, Background,  } from "../../components";
-import { getCubes } from "../../core/api";
+import { Card, Loading, Background, } from "../../components";
+import { api } from "../../core/api";
 import "./index.css"
 
 function ProductsPage() {
@@ -25,18 +25,19 @@ function ProductsPage() {
   }
 
   function updateCubes() {
-    if (savedCubes.length === 0) {
-      getCubes()
-        .then(data => {
-          setCubes(data);
-          console.log(data);
-          dispatch(saveCubes(data)); //кэшируем
+    if (savedCubes && savedCubes.length) {
+      setCubes(savedCubes);
+    } else {
+      api.get('/cubes')
+        .then(response => {
+          const cubes = response.data;
+          setCubes(cubes);
+          console.log(cubes);
+          dispatch(saveCubes(cubes)); //кэшируем
         })
         .catch(error => {
           console.error(error);
         });
-    } else {
-      setCubes(savedCubes);
     }
   }
 

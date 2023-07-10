@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { like, api,  } from "../../core/api.js";
 import { saveLiked, changeReload, } from "../../core/slice.js";
 
-import { Loading } from "../../components";
+import { Loading } from "../../components/index.jsx";
 import './index.css';
 
 function ProductPage() {

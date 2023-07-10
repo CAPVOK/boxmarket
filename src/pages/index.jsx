@@ -1,6 +1,6 @@
 import { MainPage } from "./Main";
-import { ProductPage } from "./ProductPage";
-import { NotFoundPage } from "./NotFoundPage";
+import { ProductPage } from "./Product";
+import { NotFoundPage } from "./NotFound";
 import { ProductsPage } from "./Products";
 import { ProfilePage } from "./Profile";
 import { LogInPage } from "./LogIn";
