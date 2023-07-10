@@ -8,34 +8,6 @@ import { saveCubes, saveLiked } from "../../core/slice";
 
 function MainPage() {
 
-  const dispatch = useDispatch();
-  const savedCubes = useSelector(state => state.todos.cubes);
-  const likedCubes = useSelector(state => state.todos.liked);
-
-  // потайной запрос на будущее 
-  useEffect(() => { 
-    if (savedCubes.length === 0) {
-      getCubes()
-        .then(data => {
-          console.log(data);
-          dispatch(saveCubes(data)); //кэшируем
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }
-    if (likedCubes.length === 0) {
-      getLiked()
-        .then(data => {
-          console.log(data);
-          dispatch(saveLiked(data)); //кэшируем
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }
-  }, [])
-
   return (
     <div className="MainPage">
       <div className="top-level">
