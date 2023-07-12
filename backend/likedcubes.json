@@ -24,19 +24,19 @@
     "imageUrl": "http://localhost:3000/images/cube2.jpg"
   },
   {
-    "id": 1,
-    "name": "Кубик 'Кристалл'",
-    "new": false,
-    "popular": 1,
-    "description": "Прекрасный кубик с кристальной текстурой, который добавит блеск в вашу коллекцию.",
-    "imageUrl": "http://localhost:3000/images/cube1.jpg"
-  },
-  {
     "id": 6,
     "name": "Кубик 'Золотой'",
     "new": false,
     "popular": 8,
     "description": "Элегантный золотой кубик, который придаст вашей коллекции роскоши и изысканности.",
     "imageUrl": "http://localhost:3000/images/cube6.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Кубик 'Черный матовый'",
+    "new": true,
+    "popular": 3,
+    "description": "Строгий и элегантный черный матовый кубик, который подчеркнет вашу утонченность и стиль.",
+    "imageUrl": "http://localhost:3000/images/cube12.jpg"
   }
 ]

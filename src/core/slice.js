@@ -3,13 +3,17 @@ import { createSlice } from '@reduxjs/toolkit'
 export const counterSlice = createSlice({
   name: 'cache',
   initialState: {
-    login: false,
-    needReload: false,
-    cubes: [],
-    liked: [],
+    server: false, // отвечает ли сервер
+    login: false, // зарегистрирован ли пользователь
+    needReload: false, // нужно ли запросить данные
+    cubes: [], // данные о кубах
+    liked: [], // лайкнутые кубы
   },
   reducers: {
-    changeLogin: (state, action) => {
+    setServer: (state, action) => {
+      state.server = action.payload
+    },
+    setLogin: (state, action) => {
       state.login = action.payload
     },
     saveCubes: (state, action) => {
@@ -18,12 +22,12 @@ export const counterSlice = createSlice({
     saveLiked: (state, action) => {
       state.liked = action.payload
     },
-    changeReload: (state, action) => {
+    setReload: (state, action) => {
       state.needReload = action.payload
     },
   },
 })
 
-export const { saveCubes, saveLiked, changeReload, changeLogin,  } = counterSlice.actions
+export const { saveCubes, saveLiked, setReload, setLogin, setServer,  } = counterSlice.actions
 
 export default counterSlice.reducer

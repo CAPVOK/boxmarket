@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useLocation, } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { changeLogin } from '../../core/slice';
+import { setLogin } from '../../core/slice';
 import { api } from '../../core/api';
 
 import './index.css';
@@ -26,7 +26,7 @@ function LogInPage() {
       api.post('/login',request)
       .then(response => {
         console.log(response.data.message);
-        dispatch(changeLogin(true));
+        dispatch(setLogin(true));
         navigate(fromPage, {replace: true});
       })
       .catch(err => {

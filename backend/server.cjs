@@ -132,6 +132,10 @@ app.post('/login', (req, res) => {
   res.json(deletedCube);
 }); */
 
+app.get('/hellow', (req, res) => {
+  res.status(200).json({});
+})
+
 app.use('/images', express.static(imagesPath));
 
 // Запуск сервера

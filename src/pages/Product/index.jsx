@@ -1,8 +1,8 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { like, api,  } from "../../core/api.js";
-import { saveLiked, changeReload, } from "../../core/slice.js";
+import { saveLiked, setReload, } from "../../core/slice.js";
 
 import { Loading } from "../../components/index.jsx";
 import './index.css';
@@ -22,7 +22,7 @@ function ProductPage() {
     like(id)
       .then(data => {
         setLiked(!liked);
-        dispatch(changeReload(true)); // нужно ли обновить данные
+        dispatch(setReload(true)); // нужно ли обновить данные
       })
       .catch(err => console.log(err))
   }
@@ -31,15 +31,16 @@ function ProductPage() {
     navigate(-1);
   }
 
-  function getCubes() {
+  function getCube() {
     if (savedCubes && savedCubes.length) {
       const cube = savedCubes.find(cube => cube.id === +id);
       setCube(cube);
     } else {
       api.get(`/cubes/${id}`)
         .then(response => {
-          console.log(response.data);
-          setCube(response.data);
+          const cube = response.data;
+          console.log(cube);
+          setCube(cube);
         })
         .catch(err => console.log(err))
     }
@@ -53,11 +54,11 @@ function ProductPage() {
     } else {
       api.get('/liked')
         .then(response => {
-          const data = response.data;
-          console.log(data);
-          dispatch(saveLiked(data));
-          dispatch(changeReload(false));
-          if (data.find(liked => liked.id === +id)) {
+          const likedCubes = response.data;
+          console.log(likedCubes);
+          dispatch(saveLiked(likedCubes));
+          dispatch(setReload(false));
+          if (likedCubes.find(likedCube => likedCube.id === +id)) {
             setLiked(true);
           }
         })
@@ -66,7 +67,7 @@ function ProductPage() {
   }
 
   useEffect(() => {
-    getCubes();
+    getCube();
     getLiked();
   }, [])
 

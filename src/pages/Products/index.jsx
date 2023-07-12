@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { saveCubes } from "../../core/slice";
+import { saveCubes, setServer } from "../../core/slice";
 
 import { Card, Loading, Background, } from "../../components";
 import { api } from "../../core/api";
@@ -11,7 +11,8 @@ function ProductsPage() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const savedCubes = useSelector(state => state.todos.cubes);
+  const savedCubes = useSelector(state => state.todos.cubes); // данные о кубах
+  const isServer = useSelector(state => state.todos.server); // работает ли сервер
 
   let [cubes, setCubes] = useState([]);
 
@@ -24,6 +25,7 @@ function ProductsPage() {
     }
   }
 
+  // запрос кубиков 
   function updateCubes() {
     if (savedCubes && savedCubes.length) {
       setCubes(savedCubes);
@@ -42,12 +44,24 @@ function ProductsPage() {
   }
 
   useEffect(() => {
-    updateCubes();
+    if (!isServer) {
+      api.get('/hellow')
+        .then(() => {
+          dispatch(setServer(true)) // сервер работает
+          console.log('сервер работает');
+        }).catch(() => {
+          dispatch(setServer(false)) // сервер не работает
+          console.log('сервер не отвечает');
+        }
+        )
+    } else {
+      updateCubes();
+    }
   }, [])
 
   return (
     <>
-      {cubes.length !== 0 ? (
+      {isServer && cubes.length !== 0 ? (
         <div className="ProductsPage" onClick={clickCard}>
           <div className="grid">
             {cubes.map((cube) =>

@@ -1,7 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setServer } from "../../core/slice";
+import { api } from "../../core/api";
 import "./index.css"
 
 function MainPage() {
+
+  const navigate = useNavigate();
+  const login = useSelector(state => state.todos.login);
+  const dispatch = useDispatch();
+
+  function clickButton() {
+    navigate('/profile')
+  }
+
+  // запрос на будущее
+  useEffect(() => {
+    api.get('/hellow')
+      .then(() => {
+        dispatch(setServer(true)) // сервер работает
+        console.log('сервер работает');
+      }).catch(() => {
+        dispatch(setServer(false)) // сервер не работает
+        console.log('сервер не отвечает');
+      }
+      )
+  }, [])
 
   return (
     <div className="MainPage">
@@ -32,9 +57,9 @@ function MainPage() {
         <p>КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ
           КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ КУБЫ</p>
       </div>
-      <button >
+      {!login && <button onClick={clickButton}>
         <p>Войти</p>
-      </button>
+      </button>}
     </div>
   )
 };
