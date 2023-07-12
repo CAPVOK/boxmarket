@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { like, api,  } from "../../core/api.js";
@@ -14,6 +14,7 @@ function ProductPage() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
   const savedCubes = useSelector(state => state.todos.cubes);
   const likedCubes = useSelector(state => state.todos.liked);
   const needReload = useSelector(state => state.todos.needReload);
@@ -28,7 +29,7 @@ function ProductPage() {
   }
 
   function clickBack() {
-    navigate(-1);
+    navigate(location.state?.prev || -1);
   }
 
   function getCube() {

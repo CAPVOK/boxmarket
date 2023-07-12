@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { saveCubes, setServer } from "../../core/slice";
 
 import { Card, Loading, Background, } from "../../components";
@@ -11,6 +11,7 @@ function ProductsPage() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
   const savedCubes = useSelector(state => state.todos.cubes); // данные о кубах
   const isServer = useSelector(state => state.todos.server); // работает ли сервер
 
@@ -21,7 +22,7 @@ function ProductsPage() {
     const card = event.target.closest(".Card");
     if (card) {
       const cardId = card.getAttribute('data-id')
-      navigate(`/products/${cardId}`);
+      navigate(`/products/${cardId}`, {state: {from: location}});
     }
   }
 

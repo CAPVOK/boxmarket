@@ -10,6 +10,7 @@ function LogInPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const fromPage = location.state?.from?.pathname || '/';
+  const prevPage = location.state?.prev;
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -27,7 +28,7 @@ function LogInPage() {
       .then(response => {
         console.log(response.data.message);
         dispatch(setLogin(true));
-        navigate(fromPage, {replace: true});
+        navigate(fromPage, {replace: true, state: {prev: prevPage}});
       })
       .catch(err => {
         const errorMessage = err.response.data.message;

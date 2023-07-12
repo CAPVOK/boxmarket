@@ -5,9 +5,9 @@ function Auth({ children }) {
 
   const location = useLocation();
   const auth = useSelector(state => state.todos.login);
-
+  
   if (!auth) {
-    return <Navigate to="/login" state={{from: location}}/>
+    return <Navigate to="/login" state={{from: location, prev: location.state?.from?.pathname}}/>
   }
 
   return children;
