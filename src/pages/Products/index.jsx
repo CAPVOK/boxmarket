@@ -44,19 +44,16 @@ function ProductsPage() {
   }
 
   useEffect(() => {
-    if (!isServer) {
-      api.get('/hellow')
-        .then(() => {
-          dispatch(setServer(true)) // сервер работает
-          console.log('сервер работает');
-        }).catch(() => {
-          dispatch(setServer(false)) // сервер не работает
-          console.log('сервер не отвечает');
-        }
-        )
-    } else {
-      updateCubes();
-    }
+    api.get('/hellow') // чтобы не показывать страшные карточки без картинок)
+      .then(() => {
+        dispatch(setServer(true)) // сервер работает
+        console.log('сервер работает');
+      }).catch(() => {
+        dispatch(setServer(false)) // сервер не работает
+        console.log('сервер не отвечает');
+      }
+      )
+    updateCubes();
   }, [])
 
   return (

@@ -3,3 +3,6 @@
   height: 100vh;
   padding: 50px 50px 50px 50px;
 }
+.NotFoundPage a {
+  color: var(--red);
+}
