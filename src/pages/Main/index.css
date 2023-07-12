@@ -1,138 +1,158 @@
 .MainPage {
   box-sizing: border-box;
+  width: 100%;
   height: 100vh;
   background-color: var(--white);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-rows: 65% 35%;
+
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p {
+  margin: 0;
   color: var(--dark);
   text-decoration: none;
 }
-a {
-  text-decoration: underline;
-}
 
-.MainPage .top-level {
-  position: relative;
-  height: 66%;
-  display: flex;
-}
-
-.MainPage .bottom-level {
-  height: 34%;
-  display: flex;
-}
-
-.MainPage .top-level .left {
-  width: 90%;
-  height: 100%;
-  background-color: var(--white);
+.MainPage .top-left {
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
   animation: expand-left .8s forwards;
 }
-.MainPage .top-level .left .text-h1 {
-  padding: 0 30px;
-}
-.MainPage .top-level .left .text-h1 h1 {
-  font-weight: 800;
-}
-.MainPage .top-level .left .text {
-  position: relative;
-  padding: 0 30px;
-}
-.MainPage .top-level .left .text h3{
-  transition: 0.2s;
-} 
-.MainPage .top-level .left .text h3:hover {
-  color: red;
-} 
 
-.MainPage .top-level .middle {
+.MainPage .top-left h1 {
+  font-size: calc(1vw * 3.5);
+  animation: expand-left 1s forwards;
+}
+
+.MainPage .top-left p {
+  overflow: scroll;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  animation: expand-left 1.1s forwards;
+}
+
+.MainPage .top-left a {
+  position: relative;
+  margin-bottom: 30px;
+  width: fit-content;
+  transition: 0.3s;
+  animation: expand-left 1.2s forwards;
+}
+
+.MainPage .top-left a::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--red);
+  transition: 0.3s;
+}
+
+.MainPage .top-left a:hover,
+.MainPage .top-left a:focus {
+  scale: 1.05;
+}
+
+.MainPage .top-left a:hover::after,
+.MainPage .top-left a:focus::after {
+  width: 100%;
+}
+
+.MainPage .top-middle {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-image: url('/cubelogo.jpg');
-  background-position: center;
+  background-image: url('./cubelogo.jpg');
   background-size: cover;
+  background-position: center;
   animation: expand-top .8s forwards;
 }
 
-.MainPage .top-level .right {
-  width: 90%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  animation: expand-right .8s forwards;
-}
-.MainPage .top-level .right .img {
-  width: 60%;
-  height: 100%;
-  background-image: url('/thisiscube.png');
+.MainPage .top-right {
+  margin-inline: auto;
+  width: 80%;
+  background-image: url('./thisiscube.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  animation: expand-right .8s forwards;
 }
 
-.MainPage .bottom-level .left {
-  position: relative;
-  width: 90%;
-  height: 100%;
+.MainPage .bottom-left {
+  padding: 30px;
+  -webkit-text-fill-color: var(--white);
   background-color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   animation: expand-left .8s forwards;
 }
-.MainPage .bottom-level .left .text {
-  padding: 0;
+.MainPage .bottom-left h4 {
+  animation: expand-left 1s forwards;
 }
-.MainPage .bottom-level .left .text p{
-  padding: 0 30px;
-  font-size: 0.8rem;
-  color: var(--white);
-} 
-.MainPage .bottom-level .left .text h4{
-  padding: 10px 30px 0 30px;
-  color: var(--white);
+.MainPage .bottom-left p {
+  overflow: scroll;
+  margin-block: 10px;
+  animation: expand-left 1.1s forwards;
 }
-.MainPage .bottom-level .left .sale {
+.MainPage .bottom-left .sale {
+  position: relative;
+  flex-grow: 1;
+  min-height: 80px;
+  animation: expand-left 1.2s forwards;
+}
+
+.MainPage .bottom-left .sale div {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
-  height: 30%;
+  height: 100%;
   aspect-ratio: 1;
+  background-color: var(--white);
+  -webkit-text-fill-color: var(--dark);
   display: flex;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 2rem;
-  background-color: var(--white);
+  font-size: calc((1vw + 1vh) * 1.8);
 }
 
-.MainPage .bottom-level .middle {
-  width: 100%;
-  height: 100%;
-  background-color: var(--white);
+.MainPage .bottom-middle {
+  padding: 30px;
+  padding-top: 60px;
+  text-align: center;
+  overflow: hidden;
   animation: expand-bottom .8s forwards;
 }
-.MainPage .bottom-level .middle h2 {
-  padding: 30px 30px 0 30px;
-  text-align: center;
-}
-.MainPage .bottom-level .middle p {
-  text-align: center;
+.MainPage .bottom-middle p {
+  overflow: scroll;
+  font-size: calc((1vh + 1vw) * .9);
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
-.MainPage .bottom-level .right {
+.MainPage .bottom-right {
   cursor: default;
   overflow: hidden;
   position: relative;
   padding: 0;
-  width: 90%;
+  width: 100%;
   height: 100%;
   background-color: var(--dark);
   animation: expand-right .8s forwards;
 }
-.MainPage .bottom-level .right p{
+
+.MainPage .bottom-right p {
   position: absolute;
   padding: 0;
   margin: 0;
@@ -156,7 +176,7 @@ a {
   }
 }
 
-.MainPage .top-level .button {
+.MainPage button {
   position: absolute;
   width: 80px;
   height: 80px;
@@ -166,18 +186,47 @@ a {
   background-color: var(--red);
   transform: translate(-50%, -50%);
   left: 50%;
-  top: 100%;
+  top: 65%;
   z-index: 2;
+  transition: .3s;
+}
+.MainPage button p{
+  position: relative;
+  margin-inline: auto;
+  width: fit-content;
+  font-size: 1.3rem;
+  color: var(--white);
+}
+.MainPage button p::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--white);
+  transition: 0.3s;
+}
+.MainPage button:hover {
+  cursor: pointer;
+}
+.MainPage button:hover p::after, .MainPage button:focus p::after {
+  width: 100%;
 }
 
-button:hover {
-  cursor: pointer;
+
+@keyframes back {
+  100% {
+    background-position: 2106px 0;
+  }
 }
 
 @keyframes expand-top {
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -187,6 +236,7 @@ button:hover {
   0% {
     transform: translateY(100%);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -196,6 +246,7 @@ button:hover {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(0px);
   }
@@ -205,6 +256,7 @@ button:hover {
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(0px);
   }
