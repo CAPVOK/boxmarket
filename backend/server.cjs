@@ -132,7 +132,7 @@ app.post('/login', (req, res) => {
   res.json(deletedCube);
 }); */
 
-app.get('/hellow', (req, res) => {
+app.get('/hello', (req, res) => {
   res.status(200).json({});
 })
 

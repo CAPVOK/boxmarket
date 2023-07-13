@@ -22,7 +22,7 @@ function ProductsPage() {
     const card = event.target.closest(".Card");
     if (card) {
       const cardId = card.getAttribute('data-id')
-      navigate(`/products/${cardId}`, {state: {from: location}});
+      navigate(`/products/${cardId}`, { state: { from: location } });
     }
   }
 
@@ -45,7 +45,7 @@ function ProductsPage() {
   }
 
   useEffect(() => {
-    api.get('/hellow') // чтобы не показывать страшные карточки без картинок)
+    api.get('/hello') // чтобы не показывать страшные карточки без картинок)
       .then(() => {
         dispatch(setServer(true)) // сервер работает
         console.log('сервер работает');

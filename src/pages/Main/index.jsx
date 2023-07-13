@@ -17,7 +17,7 @@ function MainPage() {
 
   // запрос на будущее
   useEffect(() => {
-    api.get('/hellow')
+    api.get('/hello')
       .then(() => {
         dispatch(setServer(true)) // сервер работает
         console.log('сервер работает');
